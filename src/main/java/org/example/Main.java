@@ -24,7 +24,7 @@ public class Main {
 
 
         System.out.println("-------------------------");
-        System.out.println("crivere un programma che controlli se una stringa è un palindromo, ignorando spazi, punteggiatura e differenze tra maiuscole e minuscole.\n" +
+        System.out.println("Scrivere un programma che controlli se una stringa è un palindromo, ignorando spazi, punteggiatura e differenze tra maiuscole e minuscole.\n" +
                 "Una parola o frase è palindroma se si legge uguale da sinistra a destra e viceversa.");
         //algoritmo3();
         System.out.println("-------------------------");
@@ -83,7 +83,12 @@ public class Main {
             }
             i++;
             j=i+1;
-        }System.out.println("I valori che sommati restituiscono la target sum si trovano negli indici : " +a+ " e " +b);
+        }
+        if (trovato) {
+            System.out.println("I valori che sommati restituiscono la target sum si trovano negli indici : " +a+ " e " +b);
+        } else {
+            System.out.println("Nessuna coppia trovata per la somma target.");
+        }
 
     }
 
