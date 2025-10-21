@@ -21,11 +21,11 @@ public class Main {
 //        System.out.println("-------------------------");
 //        System.out.println("Ho eseguito l'algoritmo 2");
 //        System.out.println("-------------------------");
-
-
-        System.out.println("-------------------------");
-        System.out.println("Scrivere un programma che controlli se una stringa è un palindromo, ignorando spazi, punteggiatura e differenze tra maiuscole e minuscole.\n" +
-                "Una parola o frase è palindroma se si legge uguale da sinistra a destra e viceversa.");
+//
+//
+//        System.out.println("-------------------------");
+//        System.out.println("Scrivere un programma che controlli se una stringa è un palindromo, ignorando spazi, punteggiatura e differenze tra maiuscole e minuscole.\n" +
+//                "Una parola o frase è palindroma se si legge uguale da sinistra a destra e viceversa.");
         algoritmo3();
         System.out.println("-------------------------");
         System.out.println("Ho eseguito l'algoritmo 3");
@@ -40,6 +40,7 @@ public class Main {
         int i = 0;
         int j = array.length - 1;
         boolean trovato =false;
+
         while(i<=j) {
             int k= (i+j)/2;
             if(target==array[k]){
@@ -99,16 +100,22 @@ public class Main {
         frase = frase.toLowerCase();
         boolean palindromo=true;
         StringBuilder frasepulita = new StringBuilder();
+        puliziafrase(frase , frasepulita);
 
+        String risultato = frasepulita.toString();
+        System.out.println(risultato);
+     ispalindromo( risultato, palindromo);
+
+    }
+    private static void puliziafrase(String frase, StringBuilder frasepulita){
         for (int i = 0; i < frase.length(); i++) {
             char c = frase.charAt(i);
             if (Character.isLetterOrDigit(c)) {
                 frasepulita.append(c);
             }
         }
-
-        String risultato = frasepulita.toString();
-        System.out.println(risultato);
+    }
+    private static void ispalindromo(String risultato, boolean palindromo){
         int i = 0;
         int j = risultato.length()-1;
         while (i<j){
