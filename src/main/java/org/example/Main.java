@@ -6,27 +6,27 @@ import java.util.Scanner;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        System.out.println("-------------------------");
-        System.out.println("Dato un array ordinato di numeri interi e un valore target, scrivere un programma che trovi la posizione del valore all’interno dell’array utilizzando la ricerca binaria.\n" +
-              "Se il valore non è presente, restituire -1.\n");
-        algoritmo1();
-        System.out.println("-------------------------");
-        System.out.println("Ho eseguito l'algoritmo 1");
-        System.out.println("-------------------------");
-
-        System.out.println("-------------------------");
-        System.out.println("Dato un array di numeri interi e un numero target, scrivere un programma che restituisca gli indici dei due numeri la cui somma è uguale al target.\n" +
-               "Si può assumere che ogni input abbia una sola soluzione e che non si possa usare lo stesso elemento due volte.\n");
-        algoritmo2();
-        System.out.println("-------------------------");
-        System.out.println("Ho eseguito l'algoritmo 2");
-        System.out.println("-------------------------");
+//        System.out.println("-------------------------");
+//        System.out.println("Dato un array ordinato di numeri interi e un valore target, scrivere un programma che trovi la posizione del valore all’interno dell’array utilizzando la ricerca binaria.\n" +
+//              "Se il valore non è presente, restituire -1.\n");
+//        algoritmo1();
+//        System.out.println("-------------------------");
+//        System.out.println("Ho eseguito l'algoritmo 1");
+//        System.out.println("-------------------------");
+//
+//        System.out.println("-------------------------");
+//        System.out.println("Dato un array di numeri interi e un numero target, scrivere un programma che restituisca gli indici dei due numeri la cui somma è uguale al target.\n" +
+//               "Si può assumere che ogni input abbia una sola soluzione e che non si possa usare lo stesso elemento due volte.\n");
+//        algoritmo2();
+//        System.out.println("-------------------------");
+//        System.out.println("Ho eseguito l'algoritmo 2");
+//        System.out.println("-------------------------");
 
 
         System.out.println("-------------------------");
         System.out.println("Scrivere un programma che controlli se una stringa è un palindromo, ignorando spazi, punteggiatura e differenze tra maiuscole e minuscole.\n" +
                 "Una parola o frase è palindroma se si legge uguale da sinistra a destra e viceversa.");
-        //algoritmo3();
+        algoritmo3();
         System.out.println("-------------------------");
         System.out.println("Ho eseguito l'algoritmo 3");
         System.out.println("-------------------------");
@@ -43,7 +43,7 @@ public class Main {
         while(i<=j) {
             int k= (i+j)/2;
             if(target==array[k]){
-                System.out.println("La posizione del valore targent all'interno dell'array è : " + k);
+                System.out.println("La posizione del valore target all'interno dell'array è : " + k);
                 trovato=true;
                 break;
             } else if (array[k]<target) {
@@ -93,7 +93,37 @@ public class Main {
     }
 
     private static void algoritmo3(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Inserisci la stringa da controllare : ");
+        String frase = scanner.nextLine();
+        frase = frase.toLowerCase();
+        boolean palindromo=true;
+        StringBuilder frasepulita = new StringBuilder();
 
+        for (int i = 0; i < frase.length(); i++) {
+            char c = frase.charAt(i);
+            if (Character.isLetterOrDigit(c)) {
+                frasepulita.append(c);
+            }
+        }
+
+        String risultato = frasepulita.toString();
+        System.out.println(risultato);
+        int i = 0;
+        int j = risultato.length()-1;
+        while (i<j){
+            if(risultato.charAt(i)!= risultato.charAt(j)){
+                palindromo=false;
+                break;
+            }
+            i++;
+            j--;
+        }
+        if(palindromo){
+            System.out.println("La stringa è palindroma");
+        }else{
+            System.out.println("La stringa non è palindroma");
+        }
     }
 }
 
