@@ -6,13 +6,13 @@ import java.util.Scanner;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-//        System.out.println("-------------------------");
-//        System.out.println("Dato un array ordinato di numeri interi e un valore target, scrivere un programma che trovi la posizione del valore all’interno dell’array utilizzando la ricerca binaria.\n" +
-//              "Se il valore non è presente, restituire -1.\n");
-//        algoritmo1();
-//        System.out.println("-------------------------");
-//        System.out.println("Ho eseguito l'algoritmo 1");
-//        System.out.println("-------------------------");
+        System.out.println("-------------------------");
+        System.out.println("Dato un array ordinato di numeri interi e un valore target, scrivere un programma che trovi la posizione del valore all’interno dell’array utilizzando la ricerca binaria.\n" +
+              "Se il valore non è presente, restituire -1.\n");
+        algoritmo1();
+        System.out.println("-------------------------");
+        System.out.println("Ho eseguito l'algoritmo 1");
+        System.out.println("-------------------------");
 //
 //        System.out.println("-------------------------");
 //        System.out.println("Dato un array di numeri interi e un numero target, scrivere un programma che restituisca gli indici dei due numeri la cui somma è uguale al target.\n" +
@@ -37,16 +37,18 @@ public class Main {
         System.out.println("inserisci il valore target");
         int target = sc.nextInt();
         int[] array = {1, 2, 3, 4, 6, 7, 8, 9, 10};
+        numeroTrovato( array,target);
+
+    }
+    private static void numeroTrovato(int[] array,int target  ){
+        boolean trovato =false;
         int i = 0;
         int j = array.length - 1;
-        boolean trovato =false;
-
         while(i<=j) {
             int k= (i+j)/2;
-            if(target==array[k]){
+            if(target==array[k] && !trovato){
                 System.out.println("La posizione del valore target all'interno dell'array è : " + k);
                 trovato=true;
-                break;
             } else if (array[k]<target) {
                 i=k+1;
             }else{
@@ -58,6 +60,7 @@ public class Main {
             System.out.println("-1 (Il valore non è presente nell'array)");
         }
     }
+
 
     private static void algoritmo2(){
         Scanner scan=new Scanner(System.in);
@@ -117,9 +120,8 @@ public class Main {
         int i = 0;
         int j = risultato.length()-1;
         while (i<j){
-            if(risultato.charAt(i)!= risultato.charAt(j)){
+            if(risultato.charAt(i)!= risultato.charAt(j) && palindromo){
                 palindromo=false;
-                break;
             }
             i++;
             j--;
