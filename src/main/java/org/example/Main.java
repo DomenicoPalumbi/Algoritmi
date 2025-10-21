@@ -100,14 +100,12 @@ public class Main {
         frase = frase.toLowerCase();
         boolean palindromo=true;
         StringBuilder frasepulita = new StringBuilder();
-        puliziafrase(frase , frasepulita);
-
+        puliziaFrase(frase , frasepulita);
         String risultato = frasepulita.toString();
         System.out.println(risultato);
-     ispalindromo( risultato, palindromo);
-
+        isPalindromo( risultato, palindromo);
     }
-    private static void puliziafrase(String frase, StringBuilder frasepulita){
+    private static void puliziaFrase(String frase, StringBuilder frasepulita){
         for (int i = 0; i < frase.length(); i++) {
             char c = frase.charAt(i);
             if (Character.isLetterOrDigit(c)) {
@@ -115,7 +113,7 @@ public class Main {
             }
         }
     }
-    private static void ispalindromo(String risultato, boolean palindromo){
+    private static void isPalindromo(String risultato, boolean palindromo){
         int i = 0;
         int j = risultato.length()-1;
         while (i<j){
